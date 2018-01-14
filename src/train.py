@@ -30,11 +30,11 @@ def main(**kwargs):
     """Train a summarization model."""
 
     # Load in the data.
-    tdata = util.load_title(kwargs['titleDir'], True)
-    article_data = util.load_article(kwargs['articleDir'])
+    tdata = Data.load_title(kwargs['titleDir'], True)
+    article_data = Data.load_article(kwargs['articleDir'])
 
-    valid_data = util.load_title(kwargs['validTitleDir'], None, tdata.dict)
-    valid_article_data = util.load_article(kwargs['validArticleDir'], article_data.dict)
+    valid_data = Data.load_title(kwargs['validTitleDir'], None, tdata.dict)
+    valid_article_data = Data.load_article(kwargs['validArticleDir'], article_data.dict)
 
     # Make main LM
     train_data = Data(tdata, article_data)
